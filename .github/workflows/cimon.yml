@@ -3,7 +3,7 @@ name: Cimon Security Scan
 on:
   push:
     branches:
-      - main  # Adjust to your main branch name
+      - master  # Adjust to your main branch name
 
 jobs:
   security-scan:
@@ -11,7 +11,9 @@ jobs:
 
     steps:
     - name: Run Cimon
-uses: cycodelabs/cimon-action@v0
-with:
-  client-id: ${{ secrets.CIMON_CLIENT_ID }}
-  secret: ${{ secrets.CIMON_SECRET }}
+      uses: cycodelabs/cimon-action@v0
+      with:
+        client-id: ${{ secrets.CIMON_CLIENT_ID }}
+        secret: ${{ secrets.CIMON_SECRET }}
+
+
