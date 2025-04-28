@@ -1,0 +1,19 @@
+name: Cimon Security Scan
+
+on:
+  push:
+    branches:
+      - master  # Adjust to your main branch name
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Run Cimon
+      uses: cycodelabs/cimon-action@v0
+      with:
+        client-id: ${{ secrets.CIMON_CLIENT_ID }}
+        secret: ${{ secrets.CIMON_SECRET }}
+
+
